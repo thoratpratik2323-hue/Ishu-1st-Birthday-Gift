@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 Happy Birthday My Love! 🎀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(340, 100%, 65%);
+            --primary-light: hsl(340, 100%, 85%);
+            --secondary: hsl(270, 70%, 60%);
+            --accent: hsl(45, 100%, 50%);
+            --bg-gradient: linear-gradient(135deg, #fff5f8 0%, #f3e8ff 100%);
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --shadow: 0 8px 32px rgba(139, 44, 114, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: hsl(340, 70%, 45%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+            text-align: center;
+            animation: float-title 4s ease-in-out infinite;
+        }
+
+        @keyframes float-title {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ===== GLASSMORPHISM CONTAINERS ===== */
+        .personal-message,
+        .gift,
+        .countdown,
+        .love-note-content,
+        .lyrics-container,
+        .memory-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            border: 2px solid var(--primary-light);
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (min-width: 480px) {
+            .countdown-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ===== MUSIC PLAYER ===== */
+        .music-player {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid var(--primary-light);
+        }
+
+        .music-player:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .music-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* ===== CAKE BOX ===== */
+        .cake-box {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 1000;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        .cake-box:hover {
+            transform: scale(1.2) rotate(-10deg);
+        }
+
+        /* ===== STATUS MESSAGE ===== */
+        .status-message {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+            background: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--primary-light);
+        }
+
+        /* ===== GIFT SECTION ===== */
+        #gift-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .gift {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .gift.unlocked {
+            border: 2px solid var(--primary-light);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .hidden-content {
+            margin-top: 20px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .emoji {
+            font-size: 1.3em;
+            vertical-align: middle;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .gift.unlocked:hover .emoji {
+            transform: scale(1.2);
+        }
+
+        .media-embed {
+            margin: 30px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border: 6px solid white;
+        }
+
+        /* ===== CUSTOM CONTENT STYLING ===== */
+        .instructions,
+        .poem,
+        .birthday-song,
+        .memory-box {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 18px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid var(--primary-light);
+        }
+
+        .poem {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: var(--secondary);
+            text-align: center;
+            line-height: 2;
+        }
+
+        .video-container a,
+        .interactive-button,
+        .love-note-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+            border: none;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .video-container a:hover,
+        .interactive-button:hover,
+        .love-note-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+        }
+
+        /* ===== LYRICS SECTION ===== */
+        .lyrics-container {
+            text-align: center;
+        }
+
+        .lyrics-line {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            opacity: 0.2;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: blur(1px);
+        }
+
+        .lyrics-line.active {
+            opacity: 1;
+            color: var(--primary);
+            font-weight: 700;
+            transform: scale(1.15);
+            filter: blur(0);
+        }
+
+        /* ===== PERSONAL MESSAGE ===== */
+        .personal-message h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        /* ===== EFFECTS ===== */
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+            animation: float-heart 20s linear forwards;
+            filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.3));
+        }
+
+        @keyframes float-heart {
+            0% {
+                transform: translateY(110vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-100px) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .firework {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: explode-v2 1s ease-out forwards;
+            z-index: 999;
+            box-shadow: 0 0 12px 3px currentColor;
+        }
+
+        @keyframes explode-v2 {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .personal-message,
+            .gift,
+            .countdown,
+            .lyrics-container {
+                padding: 25px;
+            }
+
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .cake-box {
+                top: 20px;
+                right: 20px;
+                font-size: 2.5rem;
+            }
+
+            .gift h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .song-controls {
+            margin-top: 15px;
+        }
+
+        .piano-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .birthday-cake-corner {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 60px;
+            z-index: 1000;
+            animation: bounce 2s infinite, glow 1.5s infinite alternate;
+            cursor: pointer;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b9d, 0 0 20px #ff6b9d;
+            }
+
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff6b9d, 0 0 30px #ff6b9d, 0 0 40px #ff6b9d;
+            }
+        }
+
+        .media-embed {
+            margin: 20px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--pink);
+        }
+
+        .qr-code {
+            max-width: 200px;
+            border: 3px solid var(--pink);
+            border-radius: 10px;
+            margin: 15px auto;
+            padding: 5px;
+            background: white;
+        }
+
+        /* Lock icon styles */
+        .lock-icon {
+            font-size: 24px;
+            margin-top: 10px;
+            color: var(--purple);
+            animation: pulse 2s infinite;
+        }
+
+        .unlock-button {
+            background: linear-gradient(45deg, var(--purple), var(--pink));
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .unlock-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .unlock-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <div class="music-player" id="music-player">
+        <div class="music-icon">🎵</div>
+        <audio id="bg-music" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <h1>🎀 Happy Birthday My Love! 🎀</h1>
+
+    <div class="cake-box" id="cake-box">🎂</div>
+
+    <div class="countdown" id="countdown">
+        <div class="countdown-title">Countdown to Birthday</div>
+        <div class="countdown-grid">
+            <div id="days">00</div>
+            <div id="hours">00</div>
+            <div id="minutes">00</div>
+            <div id="seconds">00</div>
+        </div>
+    </div>
+
+    <div id="status-message" class="status-message">Waiting for your birthday month to begin...</div>
+
+    <div class="personal-message">
+        <h2>To My Dearest ❤️</h2>
+        <div class="personal-text">
+            <p>On this special month that brought you into this world, I want you to know how incredibly grateful I am
+                to have you in my life. Every moment with you feels like a beautiful dream I never want to wake up from.
+            </p>
+
+            <p>Your smile brightens my darkest days, your laugh is my favorite melody, and your love is the greatest
+                gift I've ever received. This celebration is just a small token of how much you mean to me.</p>
+
+            <p>Here are 19 gifts for 19 days - each one will unlock on its special day. You're not just my love, you're
+                my greatest adventure, my safest haven, and my happiest thought.</p>
+        </div>
+        <div class="signature">
+            Forever yours,<br>
+            poku
+        </div>
+    </div>
+
+    <div id="gift-container"></div>
+
+    <script>
+        // ===== ENHANCED FIREWORKS =====
+        function createFireworks(x, y, count = 40, size = 4) {
+            const colors = ['#ff6b9d', '#b399d4', '#ffd700', '#ffc1d7', '#e0b0ff'];
+
+            for (let i = 0; i < count; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 40 + Math.random() * 120;
+                const sizeVariation = size * (0.6 + Math.random() * 0.8);
+
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+
+                firework.style.left = `${x}px`;
+                firework.style.top = `${y}px`;
+                firework.style.width = `${sizeVariation}px`;
+                firework.style.height = `${sizeVariation}px`;
+                firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.backgroundColor = 'currentColor';
+
+                firework.style.setProperty('--tx', `${tx}px`);
+                firework.style.setProperty('--ty', `${ty}px`);
+
+                document.body.appendChild(firework);
+                setTimeout(() => firework.remove(), 1000);
+            }
+        }
+
+        // ===== FLOATING HEARTS =====
+        function createFloatingHearts() {
+            const container = document.getElementById('floating-hearts');
+            const heartIcons = ['❤️', '💖', '💗', '💓', '✨', '🌸'];
+            const heartCount = 15;
+
+            for (let i = 0; i < heartCount; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+                    heart.style.left = `${Math.random() * 100}vw`;
+                    heart.style.animationDuration = `${15 + Math.random() * 10}s`;
+                    heart.style.fontSize = `${20 + Math.random() * 25}px`;
+                    heart.style.opacity = 0.4 + Math.random() * 0.4;
+                    container.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 20000);
+                }, i * 800);
+            }
+        }
+
+        // ===== CONFETTI EFFECT =====
+        function createConfetti() {
+            const colors = ['#ff6b9d', '#b399d4', '#ffd700', '#ff9eb5', '#a5d8ff'];
+
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${5 + Math.random() * 10}px`;
+                    confetti.style.height = `${5 + Math.random() * 10}px`;
+                    confetti.style.animationDuration = `${3 + Math.random() * 4}s`;
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 30);
+            }
+        }
+
+        // ===== MUSIC PLAYER =====
+        const musicPlayer = document.getElementById('music-player');
+        const bgMusic = document.getElementById('bg-music');
+        let isMusicPlaying = false;
+
+        musicPlayer.addEventListener('click', () => {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicPlayer.style.boxShadow = 'var(--shadow)';
+                musicPlayer.innerHTML = '<div class="music-icon">🎵</div>';
+            } else {
+                bgMusic.play();
+                musicPlayer.style.boxShadow = '0 0 20px var(--primary-light)';
+                musicPlayer.innerHTML = '<div class="music-icon">🎶</div>';
+                createConfetti();
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+
+        // ===== BIRTHDAY CAKE INTERACTION =====
+        const cakeBox = document.getElementById('cake-box');
+        cakeBox.onclick = () => {
+            createConfetti();
+            createFireworks(window.innerWidth / 2, window.innerHeight / 2, 80, 5);
+
+            // Add a temporary "pop" animation
+            cakeBox.style.transform = 'scale(1.4) rotate(-20deg)';
+            setTimeout(() => {
+                cakeBox.style.transform = '';
+            }, 300);
+        };
+
+        // ===== DATE CONFIGURATION =====
+        const BIRTHDAY_MONTH = 7; // August (0-indexed)
+        const BIRTHDAY_DATE = 19;
+        const BIRTHDAY_YEAR = new Date().getFullYear();
+
+        // Target date: August 19th of the current year
+        const targetDate = new Date(BIRTHDAY_YEAR, BIRTHDAY_MONTH, BIRTHDAY_DATE);
+
+        function updateCountdown() {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = `${d}<br><small>Days</small>`;
+                document.getElementById("hours").innerHTML = `${h}<br><small>Hours</small>`;
+                document.getElementById("minutes").innerHTML = `${m}<br><small>Mins</small>`;
+                document.getElementById("seconds").innerHTML = `${s}<br><small>Secs</small>`;
+            } else {
+                document.getElementById("countdown").innerHTML = "<div class='countdown-title'>It's your special day! 🎉</div>";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const currentDate = new Date();
+        const currentDay = currentDate.getDate();
+        const currentMonth = currentDate.getMonth();
+
+        // ===== GIFT DATA =====
+        const gifts = [
+            {
+                day: 1,
+                message: `
+          <p>It's first day of your birthday month be ready my dearrr for so much surprises <span class="emoji">💞💖❤️🔥😘🤭🧿</span></p>
+          <p>Once again Happy Birthday My Dear wifuuuuuuuu <span class="emoji">🤭🧿😘❤️🔥💖</span></p>
+          <p>From 1st of August to 19th of August there will be lots of surprises be ready my dear<span class="emoji">🥳🥳🥳💞🤭🤭🧿🧿💖❤️🔥</span></p>
+          <p>Ye dekh ke fir chats me ajana bby waha apka gift bhej rahu<span class="emoji">🤭❤️🔥💋😘🫂💞🎆💞😉</span></p>
+          <p>I hope acha lage apko yee<span class="emoji">🧿❤️🔥❤️🔥🫂</span></p>
+          <p>Lob uhhhhhhhhhhhhhhhhhh <span class="emoji">🫂❤️🔥🧿✨💞😘</span></p>
+          <div class="media-embed">
+            <iframe src="https://drive.google.com/file/d/1zAZ9cXmHh290Wkhd8Rf6nVP6bfJGCny1/preview" width="100%" height="300" allow="autoplay"></iframe>
+          </div>
+        `
+            },
+            {
+                day: 2,
+                message: `
+          <p>Its second day of your birthday month my dear I hope apko kal wala gift pasand agaya hi hai tooo abbbbbb ajj wala bhi dekh lo madam jiiii <span class="emoji">😘💖🧿</span></p>
+          <p>Once Again Happy Birthday dear Bandraiya <span class="emoji">💞✨</span></p>
+          
+          <div class="instructions">
+            <p><strong>Steps to enjoy your gift:</strong></p>
+            <ol>
+              <li>Play the special video below</li>
+              <li>Fullscreen mein dekh lo for best experience</li>
+              <li>Enjoy karo aur khush ho jao</li>
+              <li>Poku ko thank you bolna mat bhoolna! <span class="emoji">💋💋</span></li>
+            </ol>
+          </div>
+
+          <div class="media-embed">
+            <iframe src="https://drive.google.com/file/d/1i_7gcImSJ7B2PYffWRYE8gLGHl_jCKvw/preview" width="100%" height="400" allow="autoplay"></iframe>
+          </div>
+          
+          <!-- Anniversary Message -->
+          <div style="background: rgba(255,255,255,0.8); border-radius: 15px; padding: 20px; margin-top: 20px; border: 2px dashed #ff6b9d;">
+            <p style="font-size: 1.2em; color: #d4006e; font-weight: bold;">🎀 Aaj ek aur special day hai my dear! 🎀</p>
+            
+            <p>Apko toh pata hi hoga ajj ka din khaas kyun hai haina?? 😊</p>
+            
+            <p>As you guessed right - today is our <span style="font-weight:bold;color:#8a2be2;">1st anniversary of friendship!</span> 💖</p>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0;">
+              <p style="text-align: center; font-weight: bold; color: #8a2be2;">✨ Let's recall our journey short mein... ✨<br>
+              Kuch chhut gaya hoga toh bata dena madamji! 😉</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #b399d4;">
+              <p style="color: #ff6b9d; font-weight: bold;">🌼 Shuruaat 🌼</p>
+              <p>Ek din, WhatsApp community mein ek pyaari si "Bandariya" ne entry maari...<br>
+              Maine socha: <i>"Are, yeh toh cute hai!"</i> 🥺<br>
+              Tumne socha: <i>"Ye chamgadar thoda funny hai!"</i> 😂<br>
+              Fir dheere-dheere...<br>
+              Telegram pe baatein → Closeness → Ek GC banaya → <span style="color:#d4006e;">"My Life & Meri Bandariya"</span> 💬</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #ff6b9d;">
+              <p style="color: #ff6b9d; font-weight: bold;">💖 Turning Point 💖</p>
+              <p>Maine tumhe RJ-RPJ karke tease kiya...<br>
+              Tum mana karti thi, lekin end mein GC mein aa hi gayi! ❤️<br>
+              Fir kuch reasons ke chakkar mein... Mail pe shift huye!<br>
+              Wahi pe "Ishu" ban gayi meri "Bandariya"...<br>
+              Dheere-dheere pyaar badha... <span style="color:#d4006e;">26 Jan ko tumne confess kiya!</span> 🥺💘</p>
+              
+              <p style="font-style: italic;">(Tum chahti thi ki tum mere birthday pe surprise karogi...<br>
+              Lekin mera "Chamgadar dimaag" pehle hi samajh gaya! 😂)</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #b399d4;">
+              <p style="color: #ff6b9d; font-weight: bold;">🎉 Besties → Partners → Forever 🎉</p>
+              <p>Ab hum...<br>
+              ✓ Bestest se bhi besst 💫<br>
+              ✓ Perfect wifu & hubby (Already settled! 💍)<br>
+              ✓ Games (Ludo) → Movies → Late Night Cringe Talks 🎮🎬🌙<br>
+              ✓ Dark Humor Couple™ (Marne ke baad bhi saath rehna hai!) 👻</p>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0;">
+              <p style="color: #8a2be2; font-weight: bold;">😢 Sorry & Thank You 😢</p>
+              <p>Maine tumhe kabhi hurt kiya hoga...<br>
+              Lekin tumne kabhi chhoda nahi ❤️<br>
+              <i>"Ishu... tum na jaogi kabhi, na hi main dunga tujhe!"</i><br>
+              Promise: Main hamesha tumhari khushi ka dhyaan rakhunga...<br>
+              (Aur tumhare blush dekhne ke liye zinda rahunga! 😍)</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin: 10px 0; border: 2px solid #ffd700;">
+              <p style="color: #d4006e; font-weight: bold; text-align: center;">🎂 Special Day – Double Celebration! 🎂</p>
+              <p style="text-align: center;">Aaj ka din humare liye bahot khaas hai...<br>
+              Kyuki aaj hi hum mile the! ❤️<br>
+              + Isi month mein tumhara birthday bhi hai!<br>
+              So... <span style="font-weight:bold;">Happy Birthday in Advance</span>, my Genius Bandariya! 🎉🍰<br>
+              (Tumhare liye infinity surprises ready hain!)</p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493;">💌 Final Line 💌</p>
+              <p><i>"Tere bina ab life possible nahi...<br>
+              Chahe jo bhi ho, hum saath rahenge!<br>
+              I LOVE YOU TO INFINITY & BEYOND!</i> 🌌💖</p>
+              
+              <p style="margin-top: 15px;">(Ab cake kato, warna main kha jaunga! 🍰😂)</p>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin-top: 20px;">
+              <p>Lob uh my dear jaan alot 💋 and I just want to be with you always and always...<br>
+              Fir chahe hamne kitni bhi ladiya ho jaye, end me hum ko aana hai saath me hi! 🫂<br>
+              Kuch bhi ho jaye my dear, <span style="font-weight:bold;color:#d4006e;">jaane nhi dunga apko kahin</span>...<br>
+              Me kabhi bhi, koi bhi aaye samne, I will fight for you and for my love and for my life with you! ⚔️💖<br>
+              Lob uhhhh somuchhhh! 😘❤️🔥🧿</p>
+              
+              <p style="margin-top: 15px; font-weight: bold; text-align: center;">BTW ye yaad hai darling?? 👀❤️✌🏻</p>
+              <p style="text-align: center;">Ise hi toh sabse pehle mujhe laga tha ki you love me!<br>
+              TG pe baad me pata chala apne randomly bheja tha 😂<br>
+              But use pehle mene pura TG walo ko bata diya tha ki ye emoji ka meaning batao...<br>
+              Sab ko laga ki aap mujhe "I love 2" bol rahi ho!<br>
+              Aur baadme pata chala ki ye aapne randomly bheja!<br>
+              Phir mene bola ki aapne ye bola hai ki "you love your eyes" aesa hi kuch 😆<br>
+              Par ye yaad hamesha special rahegi! ❤️</p>
+              
+              <p style="text-align: center; margin-top: 15px; font-weight: bold; color: #8a2be2;">Tbh lob uh alotttt jaaan... you are my duniya and sab kuchhhhhhh! 🌎💫</p>
+            </div>
+
+            <!-- Anniversary Wish -->
+            <div style="text-align: center; margin: 25px 0 15px 0;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #d4006e; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">
+                💖 Wish You Happy 1st Anniversary of Friendship 💖<br>
+                My Dear Bandariya! 🦇❤️
+              </p>
+              <p style="font-size: 1.1em; color: #8a2be2;">
+                One year of laughter, love and endless memories...<br>
+                Here's to many more years of our beautiful journey together! ✨
+              </p>
+            </div>
+
+            <!-- Anniversary Surprise Button -->
+            <div style="text-align: center; margin-top: 15px;">
+              <a href="file:///C:/Users/thora/Downloads/envelope.html" target="_blank" 
+                 style="display: inline-block; 
+                        background: linear-gradient(45deg, #ff6b9d, #b399d4); 
+                        color: white; 
+                        padding: 12px 25px; 
+                        border-radius: 50px; 
+                        text-decoration: none; 
+                        font-weight: bold; 
+                        font-size: 1.1em; 
+                        box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); 
+                        transition: all 0.3s;
+                        border: 2px solid #ffd700;">
+                🎀 Click For Anniversary Surprise 🎀
+              </a>
+            </div>
+          </div>
+          
+          <p style="margin-top:15px;">Enjoyyyyyyyy darlinggg, <span class="emoji">✨💞</span></p>
+          <p>Lobbbbbbuhhh muahahahah <span class="emoji">💖🧿😘❤️🔥</span></p>
+        `
+            },
+            {
+                day: 3,
+                message: `
+          <p>As you know already ki it's your Birthday day month yeyeyey<span class="emoji">🥳🥳🥳🥳🥳🥳🥳🥳</span> and today isss 3 rd day of it sooooo here your 3rd gift from my side</p>
+          <p>I hope apko pasand aye honey<span class="emoji">🫂🎂😘💞🤭✨🧿💋💋🧿</span></p>
+
+          <div class="media-embed">
+            <iframe src="https://drive.google.com/file/d/1FQISkaRZFzaGo5ctyPccUF79r8BDJzsG/preview" width="100%" height="300" allow="autoplay"></iframe>
+          </div>
+          
+          <div style="text-align: center; margin: 20px 0;">
+            <a href="https://drive.google.com/file/d/1FQISkaRZFzaGo5ctyPccUF79r8BDJzsG/view?usp=drive_link" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+              🎁 Click Here to Open/Download Gift 🎁
+            </a>
+          </div>
+        `
+            },
+            {
+                day: 4,
+                message: `
+          <div class="poem">
+            <p>Baar baar din ye aaye✨🧿🔥</p>
+            <p>Baar baar dil ye gaaye😘</p>
+            <p>Tu jiye hazaaron saal✨💋💖❤️🔥🫂</p>
+            <p>Ye meri hai aarzoo💞</p>
+          </div>
+          
+          <div class="birthday-song">
+            <p>Happy Birthday to you 🎉🎉</p>
+            <p>Happy Birthday to you 💞🫂🎉🍰🥳</p>
+            <p>Ishu, Happy Birthday to you💋💖🎊🤭🥳🥳</p>
+          </div>
+          
+          <p>Here your 4th gift my lord🤭🎊💖💋🥳🍰🎉😉</p>
+          <p>I hope baki gifts ki trah apko ye bhi pasand ajyeee basss🤭🫂🎊💖💋💋🍰🎉,</p>
+          <p>😌😉</p>
+          <p>Video ache se dekha baby 😚😚😚</p>
+          <div class="media-embed">
+            <iframe src="https://drive.google.com/file/d/1ydbEYsKDHuxJNwme5i37giCGi-DJ4W6E/preview" width="100%" height="300" allow="autoplay"></iframe> 
+          </div>
+        `
+            },
+            {
+                day: 5,
+                message: `
+          <p>Ye bandraiya tuuu <span class="emoji">💖✨</span></p>
+          <p>Are are srry baba gussa mat hoooo chalooooo ajj apkaaaa 5th birthday day hai <span class="emoji">😘💋</span></p>
+          
+          <p>Wish youuuuu Happy happyyyyy birthday dearrrrrrr wifuuuuuuu <span class="emoji">🎉🥳💞</span></p>
+          
+          <p>Here your surprise my lord I hope apko ye pasand ajayeeee <span class="emoji">🤭💖</span></p>
+          
+          <div class="memory-box" style="margin-top:20px;">
+            <h3 style="color:#d4006e;">💯 100 Reasons Why I Love You Meri Jaan 💯</h3>
+            <div style="text-align:left; max-height:300px; overflow-y:auto; padding:10px; background:rgba(255,255,255,0.7); border-radius:10px;">
+              <p>1. Your smile that lights up my world ✨</p>
+              <p>2. The way you say "poku" in that cute voice 🥺</p>
+              <p>3. Your beautiful eyes that I could get lost in forever 👀💖</p>
+              <p>4. Your intelligence and quick wit 🧠⚡</p>
+              <p>5. How you make even ordinary moments special 🌈</p>
+              <p>6. Your strength and resilience 💪🌸</p>
+              <p>7. The way you care about me 🫂</p>
+              <p>8. Your adorable laugh that's my favorite sound 😂💕</p>
+              <p>9. How perfectly you fit in my arms 🤗</p>
+              <p>10. Your beautiful heart that loves so deeply 💘</p>
+              <p>...and 90 more reasons that would take all day to list!</p>
+              <p style="font-weight:bold; color:#d4006e; margin-top:10px;">Basically, I love EVERYTHING about you! 💞</p>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href="file:///C:/Users/thora/Downloads/100%20reasnsons.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                🎁 Open Your Special Memory Gift 🎁
+              </a>
+            </div>
+          </div>
+          
+          <p style="margin-top:15px;">Lob uhhh so much jaaannn <span class="emoji">💋💋💋💋💋</span></p>
+        `
+            },
+            {
+                day: 6,
+                message: `
+          <div style="background:linear-gradient(135deg,#fff0f5,#fff9e6); border-radius:20px; padding:20px; border:3px solid #ff6b9d; box-shadow:0 5px 15px rgba(214,0,110,0.2);">
+            <h3 style="color:#d4006e; font-family:'Dancing Script',cursive; font-size:1.8em; margin-bottom:15px;">🎀 Birthday Greeting Card For You My Love 🎀</h3>
+            
+            <div style="background:white; border-radius:15px; padding:15px; margin-bottom:15px; border-left:5px solid #b399d4;">
+              <p style="font-size:1.2em; line-height:1.6; color:#333;">Happy birthday wish karte karte bataun ki ye raha ek aur special gift just for you meri jaan! 💝</p>
+              
+              <p style="font-style:italic; color:#8a2be2; margin-top:10px;">"Tumhare bina har pal adhura sa lagta hai,<br>
+              Tumhari muskaan hai meri sabse pyari dua,<br>
+              Janamdin pe yehi mangta hun khuda se,<br>
+              Tum khush raho har pal meri jaan-e-bahaara!" 🌸</p>
+            </div>
+            
+            <div style="display:flex; justify-content:space-around; margin:15px 0;">
+              <span class="emoji" style="font-size:2em;">🎂</span>
+              <span class="emoji" style="font-size:2em;">🎁</span>
+              <span class="emoji" style="font-size:2em;">💐</span>
+              <span class="emoji" style="font-size:2em;">🎀</span>
+            </div>
+            
+            <p style="font-weight:bold; color:#d4006e;">May your birthday be as beautiful and special as you are my darling! 🥰</p>
+            
+            <div style="margin-top:20px; background:rgba(255,200,230,0.5); padding:10px; border-radius:10px;">
+              <p style="font-family:'Dancing Script',cursive; font-size:1.3em; color:#8a2be2;">With all my love,<br>Your poku 💌</p>
+            </div>
+          </div>
+          
+          <p style="margin-top:15px;">Here's to many more birthdays together my love! <span class="emoji">🥂💖</span></p>
+          <div class="media-embed" style="margin-top:20px;">
+            <iframe src="https://drive.google.com/file/d/1Z0lre08ArrGpR9_TDyfLflJhX44sloPc/preview" width="100%" height="300" allow="autoplay"></iframe>
+          </div>
+        `
+            },
+            {
+                day: 7,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 20px; border: 3px solid #ff6b9d;">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 1.8em;">🎀 Day 7: Mood Booster Gift 🎀</h3>
+            
+            <p style="font-size: 1.2em; color: #8a2be2;">Happy Birthday my sunshine! 🌞✨</p>
+            
+            <div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 15px; margin: 15px 0;">
+              <p>Ye raha apka ek aur special gift my love! 💝</p>
+              <p style="font-weight: bold; color: #ff1493;">This magical gift will adjust to whatever mood you're in! 🌈</p>
+              
+              <p>Feeling happy? It will dance with you! 💃🕺</p>
+              <p>Feeling sad? It will comfort you! 🤗💞</p>
+              <p>Feeling angry? It will calm you! 🧘♀️🌸</p>
+              <p>Feeling loved? It will multiply that love 100x! 💖💖💖</p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <span class="emoji" style="font-size: 2.5rem;">✨</span>
+              <span class="emoji" style="font-size: 2.5rem;">🧿</span>
+              <span class="emoji" style="font-size: 2.5rem;">💞</span>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href="file:///C:/Users/thora/Downloads/openwhith.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                🎁 Open Your Special Memory Gift 🎁
+              </a>
+            </div>
+            
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.4em; color: #d4006e;">
+              I know you'll love this my jaan, because it comes straight from my heart! 💌<br>
+              Lob uhhh soooo muchhhh! 😘💋❤️🔥
+            </p>
+          </div>
+        `
+            },
+            {
+                day: 8,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 20px; border: 3px solid #ff6b9d;">
+            <h3 style="color: #8a2be2; font-family: 'Dancing Script', cursive; font-size: 1.8em;">🌸 Day 8: Comfort Care Package 🌸</h3>
+            
+            <p style="font-size: 1.1em; color: #d4006e;">Happy Birthday once again my precious jaan! 🎂💝</p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border-left: 4px solid #ff6b9d;">
+              <p>Ye raha honey ek aur special gift just for you! 🎁</p>
+              <p style="font-weight: bold; color: #8a2be2;">This will be especially helpful during your periods my love! 🌸</p>
+              
+              <ul style="text-align: left; padding-left: 20px;">
+                <li>Warm virtual hugs whenever you need 🤗</li>
+                <li>Sweet messages to cheer you up 💌</li>
+                <li>Comforting thoughts to ease pain 💭</li>
+                <li>Endless love to make you smile 💖</li>
+              </ul>
+              
+              <p style="margin-top: 10px;">Ise apne paas rakhna hamesha jaan! 🧿</p>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href="file:///C:/Users/thora/Downloads/periods.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                🎁 Open Your Special Memory Gift 🎁
+              </a>
+            </div>
+            
+            <div style="font-family: 'Dancing Script', cursive; font-size: 1.4em; color: #ff6b9d;">
+              <p>I love you always and always,</p>
+              <p>Every time and every second,</p>
+              <p>For whole life my wada! 💍</p>
+            </div>
+            
+            <div style="margin-top: 15px;">
+              <span class="emoji" style="font-size: 1.5rem;">💋</span>
+              <span class="emoji" style="font-size: 1.5rem;">💋</span>
+              <span class="emoji" style="font-size: 1.5rem;">💋</span>
+              <span class="emoji" style="font-size: 1.5rem;">💖</span>
+              <span class="emoji" style="font-size: 1.5rem;">🧿</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 9,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 20px; border: 3px solid #ff6b9d;">
+            <h3 style="color: #9c27b0; font-family: 'Dancing Script', cursive; font-size: 2em;">🏰 Day 9: Memory Garden 🏰</h3>
+            
+            <p style="font-size: 1.3em; color: #e91e63; font-weight: bold;">Happy Birthday to you my dear princess! 👑💝</p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border: 2px solid #b399d4;">
+              <p>My dear jaanu, ye raha ek aur special gift just for you! 🎁✨</p>
+              
+              <p style="font-weight: bold; color: #9c27b0;">This is your very own Memory Garden 🌷🌼🌻</p>
+              
+              <p>Enjoy your gift honey! 🍯 I hope ye apko pasand aye! 💖</p>
+              
+              <p>You can save all your precious memories here:</p>
+              <ul style="text-align: left; padding-left: 20px;">
+                <li>Our special moments 📸</li>
+                <li>Favorite conversations 💬</li>
+                <li>Sweet memories 🧁</li>
+                <li>Future dreams ✨</li>
+              </ul>
+              
+              <p style="margin-top: 10px;">Jab bhi time mile, mujhe ye bata dena ki kya kya save kiya apne! 🤭💌</p>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href="file:///C:/Users/thora/Downloads/garden.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                🎁 Open Your Special Memory Gift 🎁
+              </a>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+              <span class="emoji" style="font-size: 2rem;">📔</span>
+              <span class="emoji" style="font-size: 2rem;">🖋️</span>
+              <span class="emoji" style="font-size: 2rem;">💾</span>
+              <span class="emoji" style="font-size: 2rem;">🔖</span>
+            </div>
+            
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #e91e63;">
+              I'll be waiting to hear about all your saved memories my jaan!<br>
+              Lob uhhh muahahaha! 😘💋❤️🔥
+            </p>
+          </div>
+        `
+            },
+            {
+                day: 10,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 20px; border: 3px solid #ff6b9d;">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">💍 Day 10: Virtual Proposal 💍</h3>
+            
+            <p style="font-size: 1.2em; color: #ff1493; font-weight: bold;">Happy Birthday janu! Maja aa raha hai na jaan meri Ishuuu bby? 😘💖</p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin: 15px 0; border-left: 5px solid #ff6b9d;">
+              <p>In gift ko roz unlock karne me maza aa raha hoga na? 🎀</p>
+              <p>I hope age ki bhi gifts apko pasand ayegi! 🎁</p>
+              
+              <p style="font-weight: bold; color: #8a2be2; margin-top: 15px;">Bass ye raha ek aur ajj ka special gift:</p>
+              <p style="font-size: 1.3em; color: #d4006e;">For my Queen 👑 For my Shearni 💎</p>
+              
+              <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+                <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493;">
+                  "There is a beautiful online proposal waiting for you! 💐<br>
+                  Be happy hone plssssssss! 🥺💞"
+                </p>
+              </div>
+              <div style="text-align: center; margin: 20px 0;">
+                <a href="file:///C:/Users/thora/Downloads/ring.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                  🎁 Open Your Special Memory Gift 🎁
+                </a>
+              </div>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <span class="emoji" style="font-size: 2.5rem;">💍</span>
+              <span class="emoji" style="font-size: 2.5rem;">🌹</span>
+              <span class="emoji" style="font-size: 2.5rem;">💒</span>
+            </div>
+            
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #d4006e;">
+              Lob uhhh my darling!<br>
+              Forever yours,<br>
+              Your poku 💌
+            </p>
+          </div>
+        `
+            },
+            {
+                day: 11,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 20px; border: 3px solid #ff6b9d;">
+            <h3 style="color: #ff1493; font-family: 'Dancing Script', cursive; font-size: 2em; text-decoration: underline;">🎨 Day 11: Our Photo Gallery 🎨</h3>
+            
+            <p style="font-size: 1.3em; color: #8a2be2;">Happy Birthday my jaaannn! 💝🎂</p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border: 2px solid #b399d4;">
+              <p>Ajj ka gift kuch special hai jaan! ✨</p>
+              <p style="font-weight: bold; color: #ff1493;">Here's a special gift for my special one - and that's YOU my dear! 💖</p>
+              
+              <p>Lob uhhh jannnnuuuuuu muhahhahah! 😘💋</p>
+              
+              <p>You can add both of our pics here: 📸</p>
+              <ul style="text-align: left; padding-left: 20px;">
+                <li>Favorite wali pics 💑</li>
+                <li>Funny moments 🤣</li>
+                <li>Romantic ones 💞</li>
+                <li>Whatever you like! 🎀</li>
+              </ul>
+              
+              <p style="margin-top: 10px;">Jo bhi apko pasand aye, kar sakte ho my love! 💌</p>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href="file:///C:/Users/thora/Downloads/wall.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+                🎁 Open Your Special Memory Gift 🎁
+              </a>
+            </div>
+            
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+              <span class="emoji" style="font-size: 2rem;">📷</span>
+              <span class="emoji" style="font-size: 2rem;">🖼️</span>
+              <span class="emoji" style="font-size: 2rem;">🎞️</span>
+              <span class="emoji" style="font-size: 2rem;">💏</span>
+            </div>
+            
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493;">
+              My lil princess, I can't wait to see our memories together!<br>
+              Love uhh muahhaha jannu! 😘💋❤️🔥🧿
+            </p>
+          </div>
+        `
+            },
+            {
+                day: 12,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 20px;">💌 My Love, My Everything 💌</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-style: italic; font-size: 1.2em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                One day, you and me...<br>
+                We'll do this together...<br>
+                And we'll always be happy, side by side... <span style="font-size: 1.3em;">🌸✨</span>
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #ff1493; margin-bottom: 10px;">
+                Happy Birthday, Mumma! <span style="font-size: 1.3em;">🎂🎉</span>
+              </p>
+              <p style="font-style: italic; color: #d4006e;">
+                Meri doosri maa, meri doctor, meri jaan...<br>
+                Tum ho meri duniya, meri sab kuch... <span style="font-size: 1.3em;">💖</span>
+              </p>
+            </div>
+            
+            <!-- Added video embed here -->
+            <div class="media-embed" style="margin: 20px 0;">
+              <iframe src="https://drive.google.com/file/d/1g_NHlGh7QQoK5DVIlAr8wOyl9PllaSBo/preview" width="100%" height="300" allow="autoplay"></iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493;">
+                I love you beyond words... <span style="font-size: 1.3em;">😚🧿</span>
+              </p>
+              <p style="font-size: 1.8em; letter-spacing: 2px; color: #d4006e; margin-top: 10px;">
+                lObbuhh!
+              </p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+              <span style="font-size: 2rem;">💋</span>
+              <span style="font-size: 2rem;">💖</span>
+              <span style="font-size: 2rem;">🧿</span>
+              <span style="font-size: 2rem;">✨</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 13,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">🌟 Day 13: Happpiest Birthday My Dear Motuuu! 🌟</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center;">
+                Mst lag rahe haina ye sab surprises? 😍<br>
+                Aur bhi hai ji! Enjoy enjoy mst! 🎉✨
+              </p>
+              
+              <p style="text-align: center; color: #d4006e; margin-top: 15px; font-weight: bold;">
+                Intezaar nhi ho raha hai apko ki next surprise kab open hoga haina?? 😏<br>
+                Lob uhhh mumamam! Paitence rakho bby! 🤭💋
+              </p>
+            </div>
+            
+            <!-- Added video embed here -->
+            <div class="media-embed" style="margin: 20px 0;">
+              <iframe src="https://drive.google.com/file/d/1JNba_nJSLTf25i4iMf7XVwpCG7axSS3L/preview" width="100%" height="300" allow="autoplay"></iframe>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 20px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Jab tum mujhe dekhti ho,<br>
+                Lagta hai jaise 🌌 chaand-taaron ne mil kar,<br>
+                Mere liye ek khwaab sajaaya hai..."
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0; line-height: 1.8;">
+              <p>Tumhari nazar mein hai woh masti 🫠<br>
+              Jo dil ko churr jaati hai,<br>
+              Aur woh pyaar ❤️🔥<br>
+              Jo saanson mein bas jaata hai...</p>
+              
+              <p style="margin-top: 15px;">Kya batayun kaise bechain karti ho tum 🤯<br>
+              Ek side glance se hi,<br>
+              Jaise dil ki dhadkan tham si jaaye... ⏳</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border-right: 4px solid #b399d4;">
+              <p style="text-align: center; font-style: italic; color: #8a2be2; line-height: 1.8;">
+                "Tum blink bhi karo, toh lagta hai 😍<br>
+                Jaise butterflies 🦋 udne lagte hain,<br>
+                Mere sine mein...
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p>Aur jab tum eye contact banaati ho 👀➡️❤️<br>
+              Lagta hai time ⏸️ ruk gaya hai,<br>
+              Bas main aur tum...<br>
+              Aur yeh ehsaas 💫 ki forever ka pyaar,<br>
+              Tumhari aankhon mein hi hai... ✨</p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e; font-size: 1.2em;">
+                I love you alot jaaaan! You are best alwayss and always! 💞
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 25px;">
+              <p style="font-family: 'Dancing Script'; font-size: 1.8em; color: #ff1493;">
+                Muhahahaa! Happy raho and smile karte raho my dear! 😘
+              </p>
+              <p style="font-size: 1.5em; letter-spacing: 2px; color: #d4006e; margin-top: 10px;">
+                Lobe uh the mosttttttttttttttttttttttt! 💋❤️🔥
+              </p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+              <span style="font-size: 2rem;">🌌</span>
+              <span style="font-size: 2rem;">🫠</span>
+              <span style="font-size: 2rem;">❤️🔥</span>
+              <span style="font-size: 2rem;">✨</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 14,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">💝 Day 14: Valentine's in August! 💝</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                Roses are red, violets are blue...<br>
+                Sugar is sweet, and so are you! 🍬<br>
+                Happy Birthday my Valentine! 💘
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <span style="font-size: 2.5rem;">🌹</span>
+              <span style="font-size: 2.5rem;">💌</span>
+              <span style="font-size: 2.5rem;">🍫</span>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Even though it's not February,<br>
+                My heart celebrates you every day!<br>
+                Here's some extra love for your birthday month!" 💝
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-weight: bold; color: #d4006e;">Lob uhhh my Valentine! 😘💋</p>
+              <p>Muhahahaha! Enjoy your special day! 🎂✨</p>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 15,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">🎉 Day 15: Halfway Surprise! 🎉</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                Happy Birthday my love! 🎂💝<br>
+                We've reached the halfway point!<br>
+                The best is yet to come! ✨
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <span style="font-size: 2.5rem;">🎁</span>
+              <span style="font-size: 2.5rem;">🎀</span>
+              <span style="font-size: 2.5rem;">🎊</span>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Just wait till you see<br>
+                What's coming next my dear!<br>
+                More love, more surprises!" 💞
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-weight: bold; color: #d4006e;">Lob uhhh jaanuuu! 😘💋</p>
+              <p>Muhahahaha! The countdown continues! ⏳✨</p>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 16,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">🎀 Day 16: Many Many Happy Returns of the Day! 🎀</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                My dear jaanuuuuu! 💝<br>
+                Bas or 2 days... then you become <span style="font-weight:bold;color:#d4006e;">17 years grandma!</span> 👵<br>
+                Aapne grandpa ki grandma! Hehehe! 👴❤️👵
+              </p>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Aaj ka apka birthday gift 💝<br>
+                Apke heart ko khush karega har situation me 🌈<br>
+                Bassss ye samajh lena..." 🤗
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0; line-height: 1.8;">
+              <p>Ye lines me bol raha hu 🗣️💬<br>
+              Apke saath baith ke ☕<br>
+              Chai peete peete... 🫖❤️</p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e;">
+                Lob uhhh jannuuuuu! 😘💋<br>
+                Be happyyyyyy! ✨🎉
+              </p>
+            </div>
+            
+            <!-- Added romantic photo frame -->
+              <div style="text-align: center; margin: 20px 0;">
+
+          <a href="file:///C:/Users/thora/Downloads/heart.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+
+            🎁 Open Your Special Memory Gift 🎁
+
+          </a>
+
+        </div>
+
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border-right: 4px solid #b399d4;">
+              <p style="text-align: center; font-style: italic; color: #8a2be2; line-height: 1.8;">
+                "Chahe jo bhi ho situation 🌀<br>
+                Hum sath hamesha rahenge ❤️<br>
+                Like chai aur biscuit! ☕🍪"
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-size: 1.2em; color: #ff1493;">
+                Happiest Pre-Birthday My Future Grandma! 👵💝<br>
+                (Jaldi hi 17 ke hone wali ho! Hehe! 😜)
+              </p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e; font-size: 1.3em;">
+                Muhahahaha! Poku loves you mosttttt! 😘<br>
+                Chai peene ka plan karte hai jaldi se! ☕❤️
+              </p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+              <span style="font-size: 2rem;">☕</span>
+              <span style="font-size: 2rem;">👵</span>
+              <span style="font-size: 2rem;">💋</span>
+              <span style="font-size: 2rem;">✨</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 17,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">🎊 Day 17: Happy Birthday Chutkiiiii! 🎊</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                Chalo chalo! Be ready for your next gift! 🎁<br>
+                I hope aese khelne me apko bohat maja ayega darling! 😍✨
+              </p>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Ek baat bolu... 💬<br>
+                You are my world, my all! 🌎💫<br>
+                If there is no you in my life...<br>
+                I will make my life the end." 💔
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0; line-height: 1.8;">
+              <p>Tbh, I love you alot! ❤️🔥<br>
+              And I am serious about you! 🧿<br>
+              I am not in attraction with you...<br>
+              I am in LOVE with youuuu! 💞</p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e;">
+                Haa nhi too? Love uh jaaan! 😘<br>
+                Muahhahaa! 🤭💋
+              </p>
+            </div>
+            
+            <!-- Added romantic photo frame -->
+           <div style="text-align: center; margin: 20px 0;">
+
+          <a href="file:///C:/Users/thora/Downloads/spin.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+
+            🎁 Open Your Special Memory Gift 🎁
+
+          </a>
+
+        </div>
+
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border-right: 4px solid #b399d4;">
+              <p style="text-align: center; font-style: italic; color: #8a2be2; line-height: 1.8;">
+                "Chahe kuch bhi ho jaye...<br>
+                Tumhare bina jeena mumkin nahi!<br>
+                Kyuki tum ho meri zindagi...<br>
+                Meri har saans... meri har khushi!" 🌈💝
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-size: 1.2em; color: #ff1493;">
+                Happiest Pre-Birthday My Chutki! Cupcake<br>
+                (Kal tak 17 ki ho jaogi! Hehe! 😜)
+              </p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e; font-size: 1.3em;">
+                Muhahahaha! Poku loves you mosttttt! 😘<br>
+                Bas ek din aur... fir BDAY! 🎉🎂
+              </p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+              <span style="font-size: 2rem;">💋</span>
+              <span style="font-size: 2rem;">❤️🔥</span>
+              <span style="font-size: 2rem;">🧿</span>
+              <span style="font-size: 2rem;">✨</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 18,
+                message: `
+          <div style="background: linear-gradient(135deg, #fff0f5, #e6f9ff); border-radius: 20px; padding: 25px; border: 3px solid #ff6b9d; box-shadow: 0 5px 15px rgba(214, 0, 110, 0.2);">
+            <h3 style="color: #d4006e; font-family: 'Dancing Script', cursive; font-size: 2em; text-align: center; margin-bottom: 15px;">🌸 Day 18: For My Sweetheart Chikni Chameli 🌸</h3>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #b399d4;">
+              <p style="font-size: 1.3em; color: #8a2be2; text-align: center; line-height: 1.8;">
+                Birthday month ka ek aur gift hazir hota hai! 🎁✨<br>
+                Happpy Birthday My Korea Kidiwani! 🇰🇷💝
+              </p>
+            </div>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+              <p style="font-family: 'Dancing Script', cursive; font-size: 1.5em; color: #ff1493; line-height: 1.8;">
+                "Ik you love Korea very much!<br>
+                Jo apka fav hai wo mera bhi hai!<br>
+                So here's a special gift for my<br>
+                Korea-obsessed wifu! 💌"
+              </p>
+            </div>
+            
+            <!-- Korean-style love letter image -->
+             <div style="text-align: center; margin: 20px 0;">
+
+          <a href="file:///C:/Users/thora/Downloads/korean.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+
+            🎁 Open Your Special Memory Gift 🎁
+
+          </a>
+
+        </div>
+
+            <div style="text-align: center; margin: 20px 0; line-height: 1.8;">
+              <p>Sarange my Korean princess! 👸💘<br>
+              Tomorrow is the big day! 🎉<br>
+              Are you ready to become 17? 🎂</p>
+              
+              <p style="margin-top: 15px; font-weight: bold; color: #d4006e;">
+                Muhahahaha! Lob uh jaanuuuu! 😘<br>
+                One more sleep till your birthday! 🌙✨
+              </p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 15px 0; border-right: 4px solid #b399d4;">
+              <p style="text-align: center; font-style: italic; color: #8a2be2; line-height: 1.8;">
+                "Neomu saranghae my Chikni Chameli!<br>
+                No matter if it's Korea or India...<br>
+                My heart only beats for you!" 💓
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <p style="font-size: 1.2em; color: #ff1493;">
+                Happiest Pre-Birthday My K-drama Queen! 👑<br>
+                (Kal tak 17 ki ho jaogi! Hehe! 😜)
+              </p>
+              
+              <div style="margin-top: 15px;">
+                <span style="font-size: 1.5rem;">🇮🇳</span>
+                <span style="font-size: 1.5rem;">❤️</span>
+                <span style="font-size: 1.5rem;">🇰🇷</span>
+              </div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+              <span style="font-size: 2rem;">💋</span>
+              <span style="font-size: 2rem;">🍜</span>
+              <span style="font-size: 2rem;">🎎</span>
+              <span style="font-size: 2rem;">✨</span>
+            </div>
+          </div>
+        `
+            },
+            {
+                day: 19,
+                message: `
+          <div style="font-size: 2.5rem; margin: 20px 0; animation: pulse 1s infinite">🎉 HAPPY BIRTHDAY! 🎉</div>
+          <div class="birthday-cake" style="font-size: 80px;">🎂</div>
+          
+          <div style="text-align: center; margin: 20px 0;">
+            <p style="font-size: 1.5em; color: #e60073;">Look at the top right corner for your special 17-candle cake! 🎂✨</p>
+          </div>
+          
+          <div class="personal-message" style="text-align: left; max-width: 600px;">
+            <p>O ji... suno ji...</p>
+            <p>Sabse pehle toh aapko iss khaas din ki lakh lakh badhaiyaan ho 🥹🎂</p>
+            <p>Ajj ka din toh duniya ke liye bas ek tareek hai...</p>
+            <p>Lekin mere liye — meri zindagi mein roshni aane ka din hai ✨💘</p>
+            
+            <p>Aap na sirf meri patni ji ho...</p>
+            <p>Balki meri har subah ki smile, har raat ki dua, aur har din ka sukoon ho 🧿❤️</p>
+            <p>Main toh khud ko bada lucky maanta hoon jo aap jaisi samajhdaar, pyaari, aur thodi si dramebaaz wifu meri zindagi mein hai 🙈💫</p>
+            
+            <p>Aap jab gussa karti ho na ji, toh lagta hai kisi ne dimag ki wifi tod di ho 😭</p>
+            <p>Lekin jab muskurati ho, toh dil karta hai duniya ruk jaaye... bas aap dekhte rahein 💕🌸</p>
+            
+            <p>Main waada karta hoon —</p>
+            <p>Har janam mein sirf aapko hi chahunga ji</p>
+            <p>Chahe mujhe har baar aapko firse impress karne ke liye "patidev certified comedy" hi kyu na karni pade 🤡💐</p>
+            
+            <p>Happy Birthday App Ji 💝</p>
+            <p>Aapka har sapna poora ho, har wish puri ho</p>
+            <p>Aur haan… cake khate waqt mujhe mat bhoolna ji</p>
+            <p>Main toh pehle se hi aapke naam ki plate leke ready hoon 🍰🤭</p>
+            
+            <div style="background: rgba(255,240,245,0.7); padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #ff6b9d;">
+              <h3 style="color: #d4006e; text-align: center;">🌹 Shayari for My Wifu Ji 🌹</h3>
+              <p style="text-align: center; font-style: italic;">
+                Zindagi mein aayi ho toh roshan sa ho gaya har mod,<br>
+                App jaisa pyaar mila toh dil ho gaya lord 😎💘<br>
+                Aapke saath har pal ek naya sa rang laata hai,<br>
+                Patidev toh sirf naam ka hai, asli boss toh aapka hukam chalaata hai 🤭👑
+              </p>
+            </div>
+            
+            <p>Aur haan ji...</p>
+            <p>Aapke liye ek cute sa gift bhi ready hai 🎁</p>
+            <p>Mujhe lagta hai shayad ye aapki kisi fantasy ya sapne se match kar jaye 💭</p>
+            <p>Kyuki honestly, mujhse zyada aapko koi nahi samajhta meri darling sona ji 😘💖</p>
+            
+            <p>I hope ye chhota sa surprise aapko pasand aaye...</p>
+            <p>Kyuki har wish aapki poori karna, ab sirf mera kaam nahi…</p>
+            <p>meri khushi bhi hai bby 🥹🫶🧿</p>
+            <p>Lob uhh sooo muchh, happy wala birthday once again meri Bandariya 💌🎂</p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 15px; margin: 20px 0; text-align: center;">
+              <p style="font-weight: bold; color: #d4006e;">I LOVE YOU —</p>
+              <p style="line-height: 1.8;">
+                Bandariya / Chutki / Honey / Wifi / Kutti / Suar / Wife / Darling / Bunny / Life Partner / Bby / Icecream / Jaduu / Genius Bandariya / Genius Garam Bandariya / Hubbbyyy / Teddy / Teddy Bear / Honey Motuuuu / Gulab Jammun / Meri Jaan / Mera Babu / Meri Isha / Ishii / Dumboooo 😘🤣💖❤🔥🧿
+              </p>
+            </div>
+          </div>
+          
+         <div class="video-container" style="margin: 30px 0;">
+            <a href="https://drive.google.com/file/d/166wlncTCs6uXWIZj45y_gnU5GWalhxLX/view?usp=drive_link" target="_blank" style="font-size: 1.2em; padding: 15px 30px;">
+              🎬 Click Here For Your Special Birthday Video 🎥
+            </a>
+          </div>   
+          <div style="text-align: center; margin: 20px 0;">
+            <a href="file:///C:/Users/thora/Downloads/19%20th%20day%202%20gift.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b9d, #b399d4); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 8px rgba(214, 0, 110, 0.3); transition: all 0.3s;">
+              🎁 Open Your Special Memory Gift 🎁
+            </a>
+          </div>       
+          <div class="lyrics-container">
+            <h3><span class="piano-icon">🎹</span> Birthday Piano Serenade</h3>
+            <div id="lyrics">
+              <div class="lyrics-line" id="line1">Happy Birthday to you</div>
+              <div class="lyrics-line" id="line2">Happy Birthday to you</div>
+              <div class="lyrics-line" id="line3">Happy Birthday dear [Name]</div>
+              <div class="lyrics-line" id="line4">Happy Birthday to you!</div>
+            </div>
+            <div class="song-controls">
+              <audio controls autoplay id="birthday-audio">
+                <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-piano-1086.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          <button class="interactive-button" onclick="
+            createConfetti();
+            createFireworks(window.innerWidth/2, 100, 200, 10);
+            createFireworks(window.innerWidth/3, 150, 150, 8);
+            createFireworks(window.innerWidth*2/3, 150, 150, 8);
+          ">Celebrate! 🎊</button>
+        `
+            }
+        ];
+
+        // ===== RENDER GIFTS =====
+        const container = document.getElementById("gift-container");
+        const statusMessage = document.getElementById("status-message");
+
+        // Check if it's the birthday month
+        const isBirthdayMonth = currentMonth === BIRTHDAY_MONTH;
+
+        // Update status message
+        if (isBirthdayMonth) {
+            if (currentDay >= BIRTHDAY_DATE) {
+                statusMessage.textContent = "All gifts unlocked! Happy Birthday! 🎉";
+            } else {
+                statusMessage.textContent = `Birthday month has begun! ${BIRTHDAY_DATE - currentDay} days until your birthday!`;
+            }
+        } else {
+            // Calculate months until birthday
+            let monthsUntilBirthday = BIRTHDAY_MONTH - currentMonth;
+            if (monthsUntilBirthday < 0) monthsUntilBirthday += 12;
+
+            statusMessage.textContent = `Waiting for your birthday month! ${monthsUntilBirthday} month(s) to go!`;
+        }
+
+        gifts.forEach(({ day, message }) => {
+            const giftBox = document.createElement("div");
+            const isUnlocked = isBirthdayMonth && day <= currentDay;
+
+            giftBox.className = isUnlocked ? "gift unlocked" : "gift";
+            giftBox.innerHTML = `
+        <h2>Day ${day} ${isUnlocked ? '🎁' : '🔒'}</h2>
+        ${isUnlocked ? `
+          <div class="hidden-content">
+            ${message}
+          </div>
+        ` : `
+          <div class="lock-icon">🔒</div>
+          <p class="locked-message">This gift will unlock on August ${day}</p>
+          <button class="unlock-button" disabled>Coming Soon</button>
+        `}
+      `;
+
+            // Add fireworks for unlocked gifts
+            if (isUnlocked) {
+                setTimeout(() => {
+                    const rect = giftBox.getBoundingClientRect();
+                    createFireworks(rect.left + rect.width / 2, rect.top + rect.height / 2, 75, 7);
+                }, day * 300);
+            }
+
+            container.appendChild(giftBox);
+        });
+
+        // ===== INITIALIZE EFFECTS =====
+        createFloatingHearts();
+        setInterval(createFloatingHearts, 20000);
+
+        // Big celebration if all gifts are unlocked
+        if (isBirthdayMonth && currentDay >= BIRTHDAY_DATE) {
+            setTimeout(() => {
+                createConfetti();
+                createFireworks(window.innerWidth / 2, 100, 150, 8);
+                createFireworks(window.innerWidth / 4, 150, 150, 8);
+                createFireworks(window.innerWidth * 3 / 4, 150, 150, 8);
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
